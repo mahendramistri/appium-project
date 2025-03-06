@@ -31,7 +31,7 @@ public void setup()
   caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
   caps.setCapability("appPackage","io.appium.android.apis");
  // caps.setCapability("appActivity","io.appium.android.apis.");
-  URL url = new URL("http://0.0.0.0:4723/wd/hub");
+  URL url = new URL("http://127.0.0.1:4723/wd/hub");
   driver = new AppiumDriver<MobileElement>(url, caps);
   }catch(Exception exp)
   {}
@@ -39,7 +39,7 @@ public void setup()
  @Test
  public void sampleTest()
  {
-
+  System.out.println(driver.getContext());
   System.out.println("I am inside sample Test");
  }
  

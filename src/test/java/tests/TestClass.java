@@ -10,28 +10,19 @@ public class TestClass extends BaseClass{
 
 	
 	@Test
-	public void testOne() {
-		MobileElement el1 =  (MobileElement)driver.findElementById("com.google.android.calculator:id/digit_7");
-		el1.click();
-		MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("plus");
-		el2.click();
-		MobileElement el3 = (MobileElement) driver.findElementById("com.google.android.calculator:id/digit_8");
-		el3.click();
-		MobileElement el4 = (MobileElement) driver.findElementById("com.google.android.calculator:id/result_preview");
-		el4.click();
-		MobileElement el5 = (MobileElement) driver.findElementByAccessibilityId("equals");
-		el5.click();
-		MobileElement el6 = (MobileElement) driver.findElementById("com.google.android.calculator:id/result_final");
-		el6.click();
-		if(el6.getText().equals("15"))
-		  {
-		   System.out.println("Test Passed...");
-		  }
-		  else
-		  {
-		   System.out.println("Test Failed...");
-		  }
-		System.out.println("COMPLETED TEST ONE..");
+	public void testOne() throws InterruptedException {
+		System.out.println(driver.getContext());
+		driver.findElementByAccessibilityId("Graphics").click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		driver.findElementByAccessibilityId("Graphics").click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		driver.findElementByAccessibilityId("Graphics").click();
+		driver.navigate().back();
+		Thread.sleep(2000);
+		driver.findElementByAccessibilityId("Graphics").click();
+		driver.navigate().back();
 	}
 
 
