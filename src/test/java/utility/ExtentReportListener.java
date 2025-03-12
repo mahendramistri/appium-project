@@ -1,5 +1,6 @@
-package utils;
+package utility;
 
+import base.BaseClass;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -8,9 +9,10 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ExtentReportListener implements ITestListener {
+public class ExtentReportListener extends BaseClass implements ITestListener {
     private static ExtentReports extent;
     private static ExtentTest test;
+
 
     @Override
     public void onStart(ITestContext context) {
@@ -31,7 +33,9 @@ public class ExtentReportListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        test.log(Status.FAIL, "Test Failed: " + result.getThrowable());
+        test.addScreenCaptureFromPath("E:\\test-project-appium\\Appium-Maven-testing-mobileapp-master\\screenshots\\failtest_20250312_162027.png");
+       test.log(Status.FAIL, "Test Failed: " + result.getThrowable());
+
     }
 
     @Override

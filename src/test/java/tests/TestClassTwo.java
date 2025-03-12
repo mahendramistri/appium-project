@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseClass;
 import io.appium.java_client.AppiumBy;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

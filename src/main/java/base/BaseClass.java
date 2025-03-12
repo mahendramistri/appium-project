@@ -1,18 +1,17 @@
-package tests;
+package base;
 
-import java.net.URL;
-
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
-import io.appium.java_client.AppiumDriver;
 
+import java.net.URL;
 public class BaseClass {
-    AppiumDriver driver;
+    protected AppiumDriver driver;
     DesiredCapabilities caps;
 
 
     public void setup() {
+
         AppiumServerStart.startServer();
         try {
 
@@ -29,6 +28,7 @@ public class BaseClass {
             // caps.setCapability("appActivity","io.appium.android.apis.");
             URL url = new URL("http://127.0.0.1:4723/wd/hub");
             driver = new AndroidDriver(url, caps);
+            System.out.println("PIN Entered Successfully!");
         } catch (Exception exp) {
             System.out.println("Exception catched!!");
         }

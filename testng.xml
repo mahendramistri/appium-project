@@ -3,12 +3,11 @@
 
 <suite name="Sample Suite">
     <listeners>
-        <listener class-name="utils.ExtentReportListener"/>
+        <listener class-name="utility.ExtentReportListener"/>
     </listeners>
     <test name="Sample Test">
         <classes>
-            <class name="tests.TestClassOne"/>
-            <class name="tests.TestClassTwo"/>
+            <class name="tests.HomePageTest"/>
         </classes>
     </test>
 </suite>
